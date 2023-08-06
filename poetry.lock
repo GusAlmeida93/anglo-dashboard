@@ -17,6 +17,7 @@ jsonschema = ">=3.0"
 numpy = "*"
 pandas = ">=0.18"
 toolz = "*"
+typing-extensions = {version = ">=4.0.1", markers = "python_version < \"3.11\""}
 
 [package.extras]
 dev = ["black (<24)", "hatch", "ipython", "m2r", "mypy", "pandas-stubs", "pytest", "pytest-cov", "ruff", "types-jsonschema", "types-setuptools", "vega-datasets", "vl-convert-python"]
@@ -34,6 +35,7 @@ files = [
 ]
 
 [package.dependencies]
+exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
 
@@ -150,6 +152,9 @@ files = [
     {file = "async-lru-2.0.4.tar.gz", hash = "sha256:b8a59a5df60805ff63220b2a0c5b5393da5521b113cd5465a44eb037d81a5627"},
     {file = "async_lru-2.0.4-py3-none-any.whl", hash = "sha256:ff02944ce3c288c5be660c42dbcca0742b32c3b279d6dceda655190240b99224"},
 ]
+
+[package.dependencies]
+typing-extensions = {version = ">=4.0.0", markers = "python_version < \"3.11\""}
 
 [[package]]
 name = "attrs"
@@ -514,6 +519,20 @@ files = [
 ]
 
 [[package]]
+name = "exceptiongroup"
+version = "1.1.2"
+description = "Backport of PEP 654 (exception groups)"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "exceptiongroup-1.1.2-py3-none-any.whl", hash = "sha256:e346e69d186172ca7cf029c8c1d16235aa0e04035e5750b4b95039e65204328f"},
+    {file = "exceptiongroup-1.1.2.tar.gz", hash = "sha256:12c3e887d6485d16943a309616de20ae5582633e0a2eda17f4e10fd61c1e8af5"},
+]
+
+[package.extras]
+test = ["pytest (>=6)"]
+
+[[package]]
 name = "executing"
 version = "1.2.0"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -543,13 +562,13 @@ devel = ["colorama", "json-spec", "jsonschema", "pylint", "pytest", "pytest-benc
 
 [[package]]
 name = "fqdn"
-version = "1.5.1"
-description = "Validates fully-qualified domain names against RFC 1123, so that they are acceptable to modern bowsers"
+version = "1.4.0"
+description = "Validate fully-qualified domain names compliant to RFC 1035 and the preferred form in RFC 3686 s. 2."
 optional = false
-python-versions = ">=2.7, !=3.0, !=3.1, !=3.2, !=3.3, !=3.4, <4"
+python-versions = "*"
 files = [
-    {file = "fqdn-1.5.1-py3-none-any.whl", hash = "sha256:3a179af3761e4df6eb2e026ff9e1a3033d3587bf980a0b1b2e1e5d08d7358014"},
-    {file = "fqdn-1.5.1.tar.gz", hash = "sha256:105ed3677e767fb5ca086a0c1f4bb66ebc3c100be518f0e0d755d9eae164d89f"},
+    {file = "fqdn-1.4.0-py3-none-any.whl", hash = "sha256:e935616ae81c9c60a22267593fe8e6af68cecc68549cc71bb9bfbcbbcb383386"},
+    {file = "fqdn-1.4.0.tar.gz", hash = "sha256:30e8f2e685ce87cdace4712fd97c5d09f5e6fa519bbb66e8f188f6a7cb3a5c4e"},
 ]
 
 [[package]]
@@ -725,6 +744,7 @@ prompt-toolkit = ">=3.0.30,<3.0.37 || >3.0.37,<3.1.0"
 pygments = ">=2.4.0"
 stack-data = "*"
 traitlets = ">=5"
+typing-extensions = {version = "*", markers = "python_version < \"3.10\""}
 
 [package.extras]
 all = ["black", "curio", "docrepr", "ipykernel", "ipyparallel", "ipywidgets", "matplotlib", "matplotlib (!=3.2.0)", "nbconvert", "nbformat", "notebook", "numpy (>=1.21)", "pandas", "pytest (<7)", "pytest (<7.1)", "pytest-asyncio", "qtconsole", "setuptools (>=18.5)", "sphinx (>=1.3)", "sphinx-rtd-theme", "stack-data", "testpath", "trio", "typing-extensions"]
@@ -921,6 +941,7 @@ files = [
 ]
 
 [package.dependencies]
+importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
 jupyter-core = ">=4.12,<5.0.dev0 || >=5.1.dev0"
 python-dateutil = ">=2.8.2"
 pyzmq = ">=23.0"
@@ -1012,6 +1033,7 @@ files = [
 ]
 
 [package.dependencies]
+importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
 jupyter-server = ">=1.1.2"
 
 [[package]]
@@ -1082,6 +1104,7 @@ files = [
 
 [package.dependencies]
 async-lru = ">=1.0.0"
+importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
 ipykernel = "*"
 jinja2 = ">=3.0.3"
 jupyter-core = "*"
@@ -1090,6 +1113,7 @@ jupyter-server = ">=2.4.0,<3"
 jupyterlab-server = ">=2.19.0,<3"
 notebook-shim = ">=0.2"
 packaging = "*"
+tomli = {version = "*", markers = "python_version < \"3.11\""}
 tornado = ">=6.2.0"
 traitlets = "*"
 
@@ -1123,6 +1147,7 @@ files = [
 
 [package.dependencies]
 babel = ">=2.10"
+importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
 jinja2 = ">=3.0.3"
 json5 = ">=0.9.0"
 jsonschema = ">=4.17.3"
@@ -1302,6 +1327,7 @@ files = [
 beautifulsoup4 = "*"
 bleach = "!=5.0.0"
 defusedxml = "*"
+importlib-metadata = {version = ">=3.6", markers = "python_version < \"3.10\""}
 jinja2 = ">=3.0"
 jupyter-core = ">=4.7"
 jupyterlab-pygments = "*"
@@ -1504,6 +1530,7 @@ files = [
 
 [package.dependencies]
 numpy = [
+    {version = ">=1.20.3", markers = "python_version < \"3.10\""},
     {version = ">=1.21.0", markers = "python_version >= \"3.10\""},
     {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
 ]
@@ -2370,13 +2397,12 @@ files = [
 
 [[package]]
 name = "rsa"
-version = "4.9"
+version = "4.2"
 description = "Pure-Python RSA implementation"
 optional = false
-python-versions = ">=3.6,<4"
+python-versions = "*"
 files = [
-    {file = "rsa-4.9-py3-none-any.whl", hash = "sha256:90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7"},
-    {file = "rsa-4.9.tar.gz", hash = "sha256:e38464a49c6c85d7f1351b0126661487a7e0a14a50f1675ec50eb34d4f20ef21"},
+    {file = "rsa-4.2.tar.gz", hash = "sha256:aaefa4b84752e3e99bd8333a2e1e3e7a7da64614042bd66f775573424370108a"},
 ]
 
 [package.dependencies]
@@ -2562,6 +2588,17 @@ python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
 files = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
+]
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]
 
 [[package]]
@@ -2816,5 +2853,5 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.11"
-content-hash = "5da0fce4f55d18106afc80be49de902bc50b5f4caadf906b48be5994c54f962d"
+python-versions = ">=3.9.17"
+content-hash = "06219b33079334253527a2dca4379788ccec25570fab25f921157c5728ac2a92"
