@@ -27,7 +27,7 @@ password = os.environ['password']
 site_url = os.environ['site_url']
 relative_url_to_file = os.environ['relative_url_to_file']
 
-df = pd.read_excel(get_data(user, password, site_url, relative_url_to_file))
+df = pd.read_parquet('data.parquet')
 
 dfg_plantao = df[['ID','PLANTÃO']].groupby(['PLANTÃO'], as_index=False).count()
 
