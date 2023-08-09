@@ -31,6 +31,13 @@ df = pd.read_parquet('data.parquet')
 
 dfg_plantao = df[['ID','PLANTÃO']].groupby(['PLANTÃO'], as_index=False).count()
 
-fig = px.pie(dfg_plantao, values='ID', names='PLANTÃO', title='Qtde atendimentos por plantão')
+fig_plantao = px.pie(dfg_plantao, values='ID', names='PLANTÃO', title='Qtde atendimentos por plantão')
 
-st.plotly_chart(fig)
+st.plotly_chart(fig_plantao)
+
+dfg_unidade = df[['ID','UNIDADE DO ALUNO']].groupby(['UNIDADE DO ALUNO'], as_index=False).count()
+
+fig_unidade = px.bar(dfg_unidade, x='UNIDADE DO ALUNO', y='ID')
+
+st.plotly_chart(fig_unidade)
+
