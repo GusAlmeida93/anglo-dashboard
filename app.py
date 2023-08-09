@@ -34,6 +34,7 @@ start_date = st.date_input('Start date', today)
 end_date = st.date_input('End date', tomorrow)
 
 df = pd.read_parquet('data.parquet')
+df['DATA'] = pd.to_datetime(df['DATA']).dt.date
 df_filter = df[(df['DATA'] >= start_date) & (df['DATA'] <= end_date)]
 
 dfg_plantao = df_filter[['ID','PLANTÃO']].groupby(['PLANTÃO'], as_index=False).count()
